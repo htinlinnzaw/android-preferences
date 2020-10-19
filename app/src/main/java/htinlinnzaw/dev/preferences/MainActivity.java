@@ -15,18 +15,18 @@ public class MainActivity extends Activity {
         EditText editText = findViewById(R.id.editText);
         editText.setOnEditorActionListener((textView, actionId, event) -> {
             String value = textView.getText().toString();
-            save(KEY,value);
+            save(KEY, value);
             return false;
         });
         SharedPreferences sharedpreferences = getPreferences(MODE_PRIVATE);
-        String value = sharedpreferences.getString(KEY,"");
-        Log.e("Storing value",value);
+        String value = sharedpreferences.getString(KEY, "");
+        Log.e("Storing value", value);
         editText.setText(value);
     }
-    public void save(String key,String value) {
+    public void save(String key, String value) {
         SharedPreferences sharedpreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(key,value);
+        editor.putString(key, value);
         editor.apply();
     }
 }
