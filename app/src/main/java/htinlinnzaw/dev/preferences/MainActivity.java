@@ -12,8 +12,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText edittext = findViewById(R.id.editText);
-        edittext.setOnEditorActionListener((textView, actionId, event) -> {
+        EditText editText = findViewById(R.id.editText);
+        editText.setOnEditorActionListener((textView, actionId, event) -> {
             String value = textView.getText().toString();
             save(KEY,value);
             return false;
@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
         SharedPreferences sharedpreferences = getPreferences(MODE_PRIVATE);
         String value = sharedpreferences.getString(KEY,"");
         Log.e("Storing value",value);
-        edittext.setText(value);
+        editText.setText(value);
     }
     public void save(String key,String value) {
         SharedPreferences sharedpreferences = getPreferences(MODE_PRIVATE);
